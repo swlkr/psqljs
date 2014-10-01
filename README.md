@@ -5,22 +5,20 @@ _A minimal sql generator for nodejs and postgres_
 
 ```javascript
 // Require the module
-var sql = require('psqljs'),
-    select = sql.select,
-    insert = sql.insert;
+var sql = require('psqljs');
 ```
 
 ### Select
 
 ```javascript
-// select * from users;
-select().from('users').toString();
+// { text: "select * from users", values: [] }
+sql.select().from('users').toQuery();
 
-// select id from users;
-select('id').from('users').toString();
+// {text: "select id from users", values: [] }
+sql.select('id').from('users').toQuery();
 
-// select id, name from users;
-select('id', 'name').from('users').toString();
+// { text: "select id, name from users", values: [] }
+sql.select('id', 'name').from('users').toQuery();
 ```
 
 ### Where
