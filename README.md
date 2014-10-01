@@ -28,7 +28,7 @@ sql.select('id', 'name').from('users').toQuery();
 select().from('users').where('id = ?', 1).toQuery();
 
 // { text: "select * from users where firstName = $1 and lastName = $2", values: ['Johnny', 'Appleseed'] }
-select().from('users').where('firstName = ?', 'Johnny').where('lastName = ?', 'Appleseed').toQuery();
+select().from('users').where('firstName = ? and lastName = ?', 'Johnny', 'Appleseed').toQuery();
 
 // { text: "select * from users where firstName = $1 or lastName = $2", values: ['Johnny', 'Appleseed'] }
 select().from('users').where('firstName = ? or lastName = ?', 'Johnny', 'Appleseed').toQuery();
