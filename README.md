@@ -38,14 +38,14 @@ select().from('users').where('firstName = ? or lastName = ?', 'Johnny', 'Applese
 
 ```js
 // { text: "insert into users (firstName, lastName) values ($1, $2)", values: ['Johnny', 'Appleseed'] }
-insert('users', { firstName: 'Johnny', lastName: 'Appleseed' });
+insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).toQuery();
 ```
 
 ### Update
 
 ```js
 // { text: "update users set firstName = $1 where firstName = $2", values: ['Sally', 'Johnny'] }
-update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny');
+update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQuery();
 ```
 
 
