@@ -1,6 +1,8 @@
 # psqljs
 _A minimal sql generator for nodejs and postgres_
 
+[![Build Status](https://travis-ci.org/swlkr/psqljs.svg?branch=master)](https://travis-ci.org/swlkr/psqljs)
+
 ## Get Started
 
 ```javascript
