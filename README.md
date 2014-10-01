@@ -46,6 +46,9 @@ sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).toQuery();
 ```js
 // { text: "update users set firstName = $1 where firstName = $2", values: ['Sally', 'Johnny'] }
 sql.update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQuery();
+
+// { text: "update users set salary = $1, house = $2 where job = $3", values: ['billions', 'private island', 'CEO'] }
+sql.update('users', { salary: 'billions', house: 'private island' }).where('job = ?', 'CEO')
 ```
 
 
