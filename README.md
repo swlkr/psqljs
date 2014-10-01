@@ -25,27 +25,27 @@ sql.select('id', 'name').from('users').toQuery();
 
 ```js
 // { text: "select * from users where id = $1", values: [1] }
-select().from('users').where('id = ?', 1).toQuery();
+sql.select().from('users').where('id = ?', 1).toQuery();
 
 // { text: "select * from users where firstName = $1 and lastName = $2", values: ['Johnny', 'Appleseed'] }
-select().from('users').where('firstName = ? and lastName = ?', 'Johnny', 'Appleseed').toQuery();
+sql.select().from('users').where('firstName = ? and lastName = ?', 'Johnny', 'Appleseed').toQuery();
 
 // { text: "select * from users where firstName = $1 or lastName = $2", values: ['Johnny', 'Appleseed'] }
-select().from('users').where('firstName = ? or lastName = ?', 'Johnny', 'Appleseed').toQuery();
+sql.select().from('users').where('firstName = ? or lastName = ?', 'Johnny', 'Appleseed').toQuery();
 ```
 
 ### Insert
 
 ```js
 // { text: "insert into users (firstName, lastName) values ($1, $2)", values: ['Johnny', 'Appleseed'] }
-insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).toQuery();
+sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).toQuery();
 ```
 
 ### Update
 
 ```js
 // { text: "update users set firstName = $1 where firstName = $2", values: ['Sally', 'Johnny'] }
-update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQuery();
+sql.update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQuery();
 ```
 
 
