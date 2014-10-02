@@ -63,6 +63,16 @@ sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning().
 sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning('firstName', 'lastName').toQuery();
 ```
 
+### Limit/Offset
+
+```js
+// { text: "select * from users limit 10", values: [] }
+sql.select().from('users').limit(10).toQuery();
+
+// { text: "select * from users limit 10 offset 5", values: [] }
+sql.select().from('users').limit(10).offset(5).toQuery();
+```
+
 ## Run the Tests
 
 ```bash
