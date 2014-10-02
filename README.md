@@ -50,9 +50,18 @@ sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).toQuery();
 sql.update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQuery();
 
 // { text: "update users set salary = $1, house = $2 where job = $3", values: ['billions', 'private island', 'CEO'] }
-sql.update('users', { salary: 'billions', house: 'private island' }).where('job = ?', 'CEO')
+sql.update('users', { salary: 'billions', house: 'private island' }).where('job = ?', 'CEO').toQuery();
 ```
 
+### Returning
+
+```js
+// { text: "insert into users (firstName, lastName) values ($1, $2) returning *", values: ['Johnny', 'Appleseed'] }
+sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning().toQuery();
+
+// { text: "insert into users (firstName, lastName) values ($1, $2) returning firstName, lastName", values: ['Johnny', 'Appleseed'] }
+sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning('firstName', 'lastName').toQuery();
+```
 
 ## Run the Tests
 
