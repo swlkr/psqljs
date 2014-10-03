@@ -1,4 +1,4 @@
-require('./utils');
+require('./lib/utils');
 
 function psql() {
   this.query = null;

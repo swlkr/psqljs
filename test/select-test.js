@@ -1,6 +1,6 @@
 var chai = require('chai'),
     expect = chai.expect,
-    sql = require('../lib/psql');
+    sql = require('../psql');
 
 describe('select', function() {
   it('should generate a select statement with an asterisk with no arguments', function() {

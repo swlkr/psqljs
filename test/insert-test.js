@@ -1,6 +1,6 @@
 var chai = require('chai'),
     expect = chai.expect,
-    sql = require('../lib/psql');
+    sql = require('../psql');
 
 describe('insert', function() {
   it('should generate an insert statement', function() {

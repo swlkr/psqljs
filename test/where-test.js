@@ -1,6 +1,6 @@
 var chai = require('chai'),
     expect = chai.expect,
-    sql = require('../lib/psql');
+    sql = require('../psql');
 
 describe('where', function() {
   it('should generate the correct sql statement', function() {
