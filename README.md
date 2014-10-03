@@ -5,6 +5,10 @@ _A minimal sql generator for nodejs and postgres_
 
 ## Get Started
 
+```bash
+$ npm install psqljs --save
+```
+
 ```javascript
 // Require the module
 var sql = require('psqljs');
