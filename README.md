@@ -14,6 +14,8 @@ $ npm install psqljs --save
 var sql = require('psqljs');
 ```
 
+## Examples
+
 ### Select
 
 ```javascript
