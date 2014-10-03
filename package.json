@@ -15,10 +15,16 @@
   "engines": {
     "node": "*"
   },
+  "keywords": [
+    "psqljs",
+    "psql",
+    "sql"
+  ],
   "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
     "mocha": "*"
-  }
+  },
+  "license": "MIT"
 }
