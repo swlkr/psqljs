@@ -108,6 +108,18 @@ psql.prototype.offset = function (offset) {
   return this;
 };
 
+psql.prototype.order = function () {
+  if(arguments.length === 0) {
+    throw new Error('Order requires at least one argument');
+  }
+
+  var values = Object.values(arguments);
+
+  this.query += ' order by ' + values.join(', ');
+
+  return this;
+};
+
 psql.prototype.toQuery = function() {
   return {
     text: this.query,

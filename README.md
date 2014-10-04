@@ -69,6 +69,16 @@ sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning().
 sql.insert('users', { firstName: 'Johnny', lastName: 'Appleseed' }).returning('firstName', 'lastName').toQuery();
 ```
 
+### Order
+
+```js
+// { text: "select * from users order by createdAt desc", values: [] }
+sql.select().from('users').order('createdAt desc').toQuery();
+
+// { text: "select * from users order by createdAt desc, id asc", values: [] }
+sql.select().from('users').order('createdAt desc', 'id asc').toQuery();
+```
+
 ### Limit/Offset
 
 ```js
