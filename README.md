@@ -59,6 +59,11 @@ sql.update('users', { firstName: 'Sally' }).where('firstName = ?', 'Johnny').toQ
 sql.update('users', { salary: 'billions', house: 'private island' }).where('job = ?', 'CEO').toQuery();
 ```
 
+```js
+// { text: "delete from users where firstName = $1", values: ['Johnny'] }
+sql.delete('users').where('firstName = ?', 'Johnny').toQuery();
+```
+
 ### Returning
 
 ```js
