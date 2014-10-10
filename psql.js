@@ -79,6 +79,7 @@ psql.prototype.update = function(table, args) {
 
 psql.prototype.delete = function(table) {
   this.query = 'delete from ' + table;
+  this.values = [];
   return this;
 };
 
