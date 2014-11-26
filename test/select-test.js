@@ -14,4 +14,14 @@ describe('select', function() {
   it('should generate a select statement with column names', function() {
     expect(sql.select('id', 'email').from('users').toQuery().text).to.equal('select id, email from users');
   });
+
+  it('should handle json columns', function() {
+    expect(sql.select('id', "data->>'name' as name").from('users').toQuery().text).to.equal("select id, data->>'name' as name from users")
+  });
+
+  //SELECT id, data->'author'->>'first_name' as author_first_name FROM books;
+  it('should handle json column nesting', function() {
+    expect(sql.select('id', "data->'author'->>'first_name' as author_first_name").from('books').toQuery().text)
+    .to.equal("select id, data->'author'->>'first_name' as author_first_name from books")
+  });
 });
