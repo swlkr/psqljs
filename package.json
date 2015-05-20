@@ -2,7 +2,7 @@
   "author": "Sean <swlkr.rbl@gmail.com>",
   "name": "psqljs",
   "description": "Postgres sql generator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/swlkr/psqljs",
   "repository": {
     "type": "git",
